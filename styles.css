@@ -1,0 +1,1445 @@
+/* ==========================================================================
+   Club Deportivo Victoria - Estilos Principales
+   Identidad Oficial: Azul Real + Verde Deportivo + Blanco Puro
+   Inspirado en la elegancia de La Herradura & Espacios de Eventos de Valle Alto
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap');
+
+:root {
+  /* Paleta cromática oficial del nuevo logo */
+  --color-primary: #0b2b4f;        /* Azul institucional profundo */
+  --color-primary-light: #123d6e;
+  --color-primary-dark: #06192e;
+  --color-blue-brand: #0d47a1;     /* Azul real del logo */
+  
+  --color-accent: #4fb828;         /* Verde deportivo vibrante */
+  --color-accent-light: #6ad141;
+  --color-accent-dark: #3d941e;
+  --color-accent-soft: rgba(79, 184, 40, 0.12);
+  
+  --color-dark: #161a1f;
+  --color-gray-dark: #475569;
+  --color-gray-medium: #64748b;
+  --color-gray-light: #e2e8f0;
+  --color-gray-bg: #f8fafc;
+  --color-white: #ffffff;
+  
+  --color-whatsapp: #25d366;
+  --color-whatsapp-dark: #1da851;
+
+  /* Tipografías */
+  --font-serif: 'Cinzel', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  /* Sombras y elevaciones */
+  --shadow-sm: 0 2px 5px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 8px 24px rgba(11, 43, 79, 0.08);
+  --shadow-lg: 0 14px 34px rgba(11, 43, 79, 0.14);
+  --shadow-xl: 0 22px 50px rgba(6, 25, 46, 0.22);
+
+  /* Transiciones y bordes */
+  --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  --border-radius: 14px;
+  --border-radius-sm: 8px;
+  --header-height: 84px;
+}
+
+/* Reset y Base */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--color-dark);
+  background-color: var(--color-gray-bg);
+  line-height: 1.65;
+  overflow-x: hidden;
+}
+
+@media (max-width: 768px) {
+  body {
+    padding-bottom: 64px;
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+button, input, select, textarea {
+  font-family: inherit;
+}
+
+/* Tipografía de Encabezados */
+h1, h2, h3, h4, h5 {
+  font-family: var(--font-serif);
+  font-weight: 700;
+  line-height: 1.25;
+  color: var(--color-primary);
+  letter-spacing: 0.02em;
+}
+
+p {
+  color: var(--color-gray-dark);
+}
+
+.container {
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.82rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--color-accent-dark);
+  margin-bottom: 12px;
+}
+
+.eyebrow svg {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+}
+
+.section-header {
+  text-align: center;
+  max-width: 780px;
+  margin: 0 auto 50px auto;
+}
+
+.section-header h2 {
+  font-size: 2.35rem;
+  margin-bottom: 16px;
+}
+
+.section-header p {
+  font-size: 1.1rem;
+  color: var(--color-gray-dark);
+}
+
+/* ==========================================================================
+   Botones Premium
+   ========================================================================== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: var(--color-accent);
+  color: var(--color-white);
+  font-weight: 700;
+  font-size: 0.95rem;
+  padding: 14px 30px;
+  border-radius: 50px;
+  border: 2px solid var(--color-accent);
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(79, 184, 40, 0.35);
+  transition: var(--transition);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.btn svg {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+}
+
+.btn:hover {
+  background: var(--color-accent-dark);
+  border-color: var(--color-accent-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 22px rgba(79, 184, 40, 0.45);
+  color: var(--color-white);
+}
+
+.btn.ghost {
+  background: transparent;
+  color: var(--color-white);
+  border-color: rgba(255, 255, 255, 0.85);
+  box-shadow: none;
+}
+
+.btn.ghost:hover {
+  background: var(--color-white);
+  color: var(--color-primary);
+  border-color: var(--color-white);
+}
+
+.btn.btn-primary {
+  background: var(--color-blue-brand);
+  border-color: var(--color-blue-brand);
+  box-shadow: 0 4px 14px rgba(13, 71, 161, 0.3);
+}
+
+.btn.btn-primary:hover {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.btn.small {
+  padding: 9px 20px;
+  font-size: 0.82rem;
+}
+
+.btn-whatsapp {
+  background: var(--color-whatsapp);
+  border-color: var(--color-whatsapp);
+  box-shadow: 0 4px 14px rgba(37, 211, 102, 0.35);
+}
+
+.btn-whatsapp:hover {
+  background: var(--color-whatsapp-dark);
+  border-color: var(--color-whatsapp-dark);
+}
+
+/* ==========================================================================
+   Header & Navegación (Sticky & Mobile Drawer)
+   ========================================================================== */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--header-height);
+  background: rgba(11, 43, 79, 0.96);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  z-index: 1000;
+  border-bottom: 1px solid rgba(79, 184, 40, 0.25);
+  transition: var(--transition);
+}
+
+.site-header.scrolled {
+  background: rgba(11, 43, 79, 0.98);
+  height: 72px;
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.25);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.brand-logo {
+  display: flex;
+  align-items: center;
+  background: #ffffff;
+  padding: 6px 18px;
+  border-radius: 50px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+  transition: var(--transition);
+}
+
+.brand-logo:hover {
+  transform: translateY(-1px) scale(1.03);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+}
+
+.brand-logo img {
+  height: 52px;
+  width: auto;
+  object-fit: contain;
+  transition: var(--transition);
+}
+
+.site-header.scrolled .brand-logo img {
+  height: 44px;
+}
+
+.main-nav {
+  display: flex;
+  align-items: center;
+  gap: 26px;
+}
+
+.nav-link {
+  color: rgba(255, 255, 255, 0.92);
+  font-size: 0.92rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  position: relative;
+  padding: 6px 0;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--color-accent);
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover {
+  color: var(--color-accent-light);
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.mobile-toggle {
+  display: none;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  color: var(--color-white);
+  z-index: 1100;
+}
+
+.mobile-toggle svg {
+  width: 28px;
+  height: 28px;
+  fill: currentColor;
+  display: block;
+}
+
+/* Menú Drawer Móvil */
+.mobile-drawer {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 85%;
+  max-width: 360px;
+  height: 100vh;
+  background: var(--color-primary-dark);
+  padding: 90px 30px 40px;
+  box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: right 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 1050;
+  overflow-y: auto;
+}
+
+.mobile-drawer.active {
+  right: 0;
+}
+
+.mobile-nav-links {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.mobile-nav-links a {
+  color: var(--color-white);
+  font-size: 1.1rem;
+  font-weight: 600;
+  padding: 10px 0;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.mobile-nav-links a svg {
+  width: 20px;
+  height: 20px;
+  fill: var(--color-accent);
+}
+
+.mobile-nav-links a:hover {
+  color: var(--color-accent-light);
+  padding-left: 8px;
+}
+
+.mobile-drawer-footer {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.drawer-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  z-index: 1040;
+  opacity: 0;
+  visibility: hidden;
+  transition: var(--transition);
+}
+
+.drawer-backdrop.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* ==========================================================================
+   Hero Section
+   ========================================================================== */
+.hero {
+  position: relative;
+  min-height: 92vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #06192e url('assets/hero.jpg') center/cover no-repeat;
+  color: var(--color-white);
+  padding: calc(var(--header-height) + 50px) 0 90px;
+  text-align: center;
+  overflow: hidden;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(11, 43, 79, 0.85) 0%,
+    rgba(11, 43, 79, 0.65) 50%,
+    rgba(6, 25, 46, 0.95) 100%
+  );
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 880px;
+  margin: 0 auto;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(79, 184, 40, 0.2);
+  border: 1px solid var(--color-accent);
+  color: #a8f08a;
+  padding: 6px 20px;
+  border-radius: 30px;
+  font-size: 0.85rem;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+  margin-bottom: 24px;
+  backdrop-filter: blur(8px);
+}
+
+.hero h1 {
+  font-size: 3.3rem;
+  color: var(--color-white);
+  margin-bottom: 20px;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+.hero h1 span {
+  color: var(--color-accent-light);
+}
+
+.hero-subtitle {
+  font-size: 1.25rem;
+  color: rgba(255, 255, 255, 0.92);
+  max-width: 700px;
+  margin: 0 auto 36px auto;
+  font-weight: 300;
+}
+
+.hero-ctas {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 18px;
+}
+
+/* Divisores de formas SVG */
+.shape-divider {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  z-index: 3;
+}
+
+.shape-divider svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 48px;
+}
+
+.shape-divider .shape-fill {
+  fill: var(--color-white);
+}
+
+/* ==========================================================================
+   Sección: El Club & Legado
+   ========================================================================== */
+.section-club {
+  padding: 95px 0;
+  background: var(--color-white);
+  position: relative;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  margin-top: 40px;
+}
+
+.feature-box {
+  background: var(--color-gray-bg);
+  border: 1px solid rgba(11, 43, 79, 0.08);
+  border-radius: var(--border-radius);
+  padding: 38px 24px;
+  text-align: center;
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.feature-box::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: var(--color-accent);
+  opacity: 0;
+  transition: var(--transition);
+}
+
+.feature-box:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+  background: var(--color-white);
+  border-color: rgba(79, 184, 40, 0.4);
+}
+
+.feature-box:hover::before {
+  opacity: 1;
+}
+
+.feature-icon {
+  width: 68px;
+  height: 68px;
+  background: var(--color-accent-soft);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px auto;
+  color: var(--color-accent-dark);
+}
+
+.feature-icon svg {
+  width: 32px;
+  height: 32px;
+  fill: currentColor;
+}
+
+.feature-box h3 {
+  font-size: 1.25rem;
+  margin-bottom: 12px;
+}
+
+.feature-box p {
+  font-size: 0.92rem;
+  line-height: 1.6;
+}
+
+/* ==========================================================================
+   Sección: Instalaciones de Primer Nivel
+   ========================================================================== */
+.section-facilities {
+  padding: 100px 0;
+  background: var(--color-primary-dark);
+  color: var(--color-white);
+  position: relative;
+}
+
+.section-facilities .eyebrow {
+  color: var(--color-accent-light);
+}
+
+.section-facilities h2 {
+  color: var(--color-white);
+}
+
+.section-facilities p {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.facilities-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+  margin-top: 40px;
+}
+
+.facility-card {
+  position: relative;
+  height: 330px;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.facility-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.facility-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(11, 43, 79, 0.15) 0%,
+    rgba(6, 25, 46, 0.9) 100%
+  );
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  transition: var(--transition);
+}
+
+.facility-tag {
+  align-self: flex-start;
+  background: var(--color-accent);
+  color: var(--color-white);
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 5px 12px;
+  border-radius: 6px;
+  margin-bottom: 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.facility-tag svg {
+  width: 14px;
+  height: 14px;
+  fill: currentColor;
+}
+
+.facility-overlay h3 {
+  font-size: 1.45rem;
+  color: var(--color-white);
+  margin-bottom: 6px;
+}
+
+.facility-overlay p {
+  font-size: 0.92rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0;
+}
+
+.facility-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-xl);
+}
+
+.facility-card:hover img {
+  transform: scale(1.08);
+}
+
+/* ==========================================================================
+   Sección: Academia Deportiva & Deportes (Con Iconos SVG Vectoriales)
+   ========================================================================== */
+.section-sports {
+  padding: 95px 0;
+  background: var(--color-white);
+}
+
+.sports-container {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 50px;
+  align-items: center;
+}
+
+.sports-info h2 {
+  font-size: 2.35rem;
+  margin-bottom: 18px;
+}
+
+.sports-tags {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+  margin: 28px 0 34px 0;
+}
+
+.sport-tag {
+  background: var(--color-gray-bg);
+  border: 1px solid var(--color-gray-light);
+  color: var(--color-primary);
+  font-size: 0.92rem;
+  font-weight: 600;
+  padding: 12px 18px;
+  border-radius: var(--border-radius-sm);
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  transition: var(--transition);
+}
+
+.sport-tag svg {
+  width: 22px;
+  height: 22px;
+  fill: var(--color-accent-dark);
+  flex-shrink: 0;
+  transition: var(--transition);
+}
+
+.sport-tag:hover {
+  background: var(--color-accent-soft);
+  border-color: var(--color-accent);
+  color: var(--color-primary-dark);
+  transform: translateX(4px);
+}
+
+.sport-tag:hover svg {
+  transform: scale(1.15);
+}
+
+.sports-image-box {
+  position: relative;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-xl);
+}
+
+.sports-image-box img {
+  width: 100%;
+  height: 460px;
+  object-fit: cover;
+}
+
+.sports-badge-overlay {
+  position: absolute;
+  bottom: 24px;
+  left: 24px;
+  right: 24px;
+  background: rgba(11, 43, 79, 0.95);
+  backdrop-filter: blur(8px);
+  padding: 20px 24px;
+  border-radius: var(--border-radius-sm);
+  color: var(--color-white);
+  border-left: 5px solid var(--color-accent);
+}
+
+.sports-badge-overlay b {
+  display: block;
+  font-size: 1.05rem;
+  color: var(--color-accent-light);
+}
+
+.sports-badge-overlay span {
+  font-size: 0.88rem;
+  color: rgba(255, 255, 255, 0.88);
+}
+
+/* ==========================================================================
+   Sección: Espacios para Eventos (Inspirado en Valle Alto)
+   ========================================================================== */
+.section-events-spaces {
+  padding: 100px 0;
+  background: var(--color-gray-bg);
+  position: relative;
+}
+
+.events-intro-card {
+  background: var(--color-white);
+  border-radius: var(--border-radius);
+  padding: 44px;
+  box-shadow: var(--shadow-md);
+  margin-bottom: 50px;
+  border: 1px solid rgba(11, 43, 79, 0.08);
+}
+
+.events-intro-header {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 36px auto;
+}
+
+.events-intro-header h2 {
+  font-size: 2.3rem;
+  margin-bottom: 12px;
+}
+
+.events-categories-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 36px;
+  margin-top: 24px;
+  border-top: 1px solid var(--color-gray-light);
+  padding-top: 36px;
+}
+
+.event-cat-column h3 {
+  font-size: 1.35rem;
+  margin-bottom: 18px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--color-blue-brand);
+}
+
+.event-cat-column h3 svg {
+  width: 24px;
+  height: 24px;
+  fill: var(--color-accent);
+}
+
+.event-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.event-list li {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--color-gray-dark);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.event-list li svg {
+  width: 16px;
+  height: 16px;
+  fill: var(--color-accent);
+  flex-shrink: 0;
+}
+
+/* Espacios / Salones Individuales */
+.spaces-showcase {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.space-item {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: var(--color-white);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  transition: var(--transition);
+}
+
+.space-item:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-xl);
+}
+
+.space-item.reverse {
+  direction: rtl;
+}
+
+.space-item.reverse .space-details {
+  direction: ltr;
+}
+
+.space-gallery {
+  position: relative;
+  height: 380px;
+  overflow: hidden;
+}
+
+.space-gallery img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.space-item:hover .space-gallery img {
+  transform: scale(1.05);
+}
+
+.space-details {
+  padding: 44px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.space-capacity-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--color-accent-soft);
+  color: var(--color-accent-dark);
+  font-size: 0.85rem;
+  font-weight: 700;
+  padding: 6px 16px;
+  border-radius: 30px;
+  align-self: flex-start;
+  margin-bottom: 14px;
+}
+
+.space-capacity-badge svg {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+}
+
+.space-details h3 {
+  font-size: 1.8rem;
+  margin-bottom: 12px;
+}
+
+.space-details p {
+  font-size: 0.98rem;
+  color: var(--color-gray-dark);
+  margin-bottom: 24px;
+  line-height: 1.65;
+}
+
+.space-features-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 28px;
+}
+
+.space-pill {
+  background: var(--color-gray-bg);
+  border: 1px solid var(--color-gray-light);
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--color-primary);
+}
+
+/* ==========================================================================
+   Sección: Membresías
+   ========================================================================== */
+.section-memberships {
+  padding: 100px 0;
+  background: var(--color-white);
+}
+
+.membership-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  margin-top: 40px;
+}
+
+.membership-card {
+  background: var(--color-gray-bg);
+  border: 1px solid var(--color-gray-light);
+  border-radius: var(--border-radius);
+  padding: 38px 28px;
+  display: flex;
+  flex-direction: column;
+  transition: var(--transition);
+  position: relative;
+}
+
+.membership-card.featured {
+  background: var(--color-white);
+  border: 2px solid var(--color-accent);
+  box-shadow: var(--shadow-xl);
+  transform: scale(1.03);
+}
+
+.featured-badge {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--color-accent);
+  color: var(--color-white);
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 5px 16px;
+  border-radius: 20px;
+  box-shadow: 0 2px 8px rgba(79, 184, 40, 0.4);
+}
+
+.membership-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 8px;
+}
+
+.membership-card .desc {
+  font-size: 0.92rem;
+  color: var(--color-gray-dark);
+  margin-bottom: 24px;
+}
+
+.membership-benefits {
+  list-style: none;
+  margin-bottom: 30px;
+  flex-grow: 1;
+}
+
+.membership-benefits li {
+  font-size: 0.92rem;
+  color: var(--color-dark);
+  padding: 10px 0;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.membership-benefits li svg {
+  width: 18px;
+  height: 18px;
+  fill: var(--color-accent);
+  flex-shrink: 0;
+}
+
+/* ==========================================================================
+   Sección: Contacto & Formulario de Prospección
+   ========================================================================== */
+.section-contact {
+  padding: 100px 0;
+  background: var(--color-gray-bg);
+}
+
+.contact-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.25fr;
+  gap: 50px;
+  background: var(--color-white);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-xl);
+  overflow: hidden;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.contact-info-panel {
+  background: var(--color-primary);
+  color: var(--color-white);
+  padding: 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.contact-info-panel .eyebrow {
+  color: var(--color-accent-light);
+}
+
+.contact-info-panel h2 {
+  color: var(--color-white);
+  font-size: 2.1rem;
+  margin-bottom: 16px;
+}
+
+.contact-info-panel p {
+  color: rgba(255, 255, 255, 0.88);
+  margin-bottom: 32px;
+}
+
+.contact-details {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.contact-item svg {
+  width: 22px;
+  height: 22px;
+  fill: var(--color-accent);
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+
+.contact-form-panel {
+  padding: 48px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--color-dark);
+  margin-bottom: 6px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid var(--color-gray-light);
+  border-radius: var(--border-radius-sm);
+  background: var(--color-gray-bg);
+  font-size: 0.95rem;
+  color: var(--color-dark);
+  transition: var(--transition);
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--color-accent);
+  background: var(--color-white);
+  box-shadow: 0 0 0 3px var(--color-accent-soft);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+/* ==========================================================================
+   Footer Institucional
+   ========================================================================== */
+.site-footer {
+  background: var(--color-primary-dark);
+  color: var(--color-white);
+  padding: 70px 0 30px 0;
+  border-top: 3px solid var(--color-accent);
+}
+
+.footer-top {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr;
+  gap: 40px;
+  margin-bottom: 50px;
+}
+
+.footer-brand .brand-logo {
+  display: inline-flex;
+  margin-bottom: 16px;
+}
+
+.footer-brand p {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 0.92rem;
+  max-width: 320px;
+}
+
+.footer-col h4 {
+  color: var(--color-accent-light);
+  font-size: 1.1rem;
+  margin-bottom: 18px;
+}
+
+.footer-col ul {
+  list-style: none;
+}
+
+.footer-col ul li {
+  margin-bottom: 10px;
+}
+
+.footer-col ul li a {
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 0.9rem;
+}
+
+.footer-col ul li a:hover {
+  color: var(--color-accent-light);
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding-top: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* ==========================================================================
+   Barra Fija Móvil & Botón Flotante
+   ========================================================================== */
+.mobile-sticky-bar {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(11, 43, 79, 0.98);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.25);
+  z-index: 999;
+  border-top: 1px solid rgba(79, 184, 40, 0.3);
+  padding: 8px 16px;
+}
+
+.mobile-sticky-inner {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 10px;
+  align-items: center;
+}
+
+.mobile-action-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 14px;
+  border-radius: 30px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.whatsapp-float {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  width: 60px;
+  height: 60px;
+  background: var(--color-whatsapp);
+  color: var(--color-white);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.45);
+  z-index: 990;
+  transition: var(--transition);
+}
+
+.whatsapp-float svg {
+  width: 32px;
+  height: 32px;
+  fill: currentColor;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 25px rgba(37, 211, 102, 0.6);
+}
+
+/* ==========================================================================
+   Lightbox Modal
+   ========================================================================== */
+.lightbox-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.92);
+  backdrop-filter: blur(8px);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  opacity: 0;
+  visibility: hidden;
+  transition: var(--transition);
+}
+
+.lightbox-modal.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.lightbox-content {
+  position: relative;
+  max-width: 900px;
+  width: 100%;
+}
+
+.lightbox-content img {
+  width: 100%;
+  max-height: 82vh;
+  object-fit: contain;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-xl);
+}
+
+.lightbox-close {
+  position: absolute;
+  top: -45px;
+  right: 0;
+  background: transparent;
+  border: none;
+  color: var(--color-white);
+  font-size: 34px;
+  cursor: pointer;
+}
+
+/* ==========================================================================
+   Media Queries (Responsive Mobile & Tablet)
+   ========================================================================== */
+@media (max-width: 1024px) {
+  .features-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .membership-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .membership-card.featured {
+    transform: none;
+  }
+
+  .events-categories-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --header-height: 72px;
+  }
+
+  .main-nav,
+  .header-actions .btn {
+    display: none;
+  }
+
+  .mobile-toggle {
+    display: block;
+  }
+
+  .mobile-sticky-bar {
+    display: block;
+  }
+
+  .whatsapp-float {
+    display: none;
+  }
+
+  .hero h1 {
+    font-size: 2.3rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.05rem;
+  }
+
+  .features-grid,
+  .facilities-grid,
+  .membership-grid,
+  .sports-tags,
+  .event-list {
+    grid-template-columns: 1fr;
+  }
+
+  .sports-container,
+  .contact-layout,
+  .space-item {
+    grid-template-columns: 1fr;
+  }
+
+  .space-gallery {
+    height: 260px;
+  }
+
+  .space-details {
+    padding: 32px 24px;
+  }
+
+  .events-intro-card {
+    padding: 32px 20px;
+  }
+
+  .sports-image-box img {
+    height: 300px;
+  }
+
+  .footer-top {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .contact-info-panel,
+  .contact-form-panel {
+    padding: 32px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 1.95rem;
+  }
+
+  .section-header h2 {
+    font-size: 1.8rem;
+  }
+
+  .btn {
+    width: 100%;
+  }
+
+  .hero-ctas {
+    flex-direction: column;
+    width: 100%;
+  }
+}
